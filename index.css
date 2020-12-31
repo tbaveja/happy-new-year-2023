@@ -142,4 +142,12 @@ canvas:active {
         display: none;
     }
 
+
+@media only screen and (max-width: 600px) {
+	h1#texthd {
+		font-size: 25vw;
+		margin-top: 10%;
+	}
+
+}
 /****/
