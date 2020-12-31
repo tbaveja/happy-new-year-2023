@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Happy waali Diwali</title>
+		<link rel='stylesheet' href='index.css'>
+		
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<div id="gui"></div>		
+		<div id="canvas-container">
+		  <div id="people"></div>
+		
+		  <h6>happy new year 2021</h6>
+		  <h1 id="texthd"></h1>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="fireworks.js" type="text/javascript"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+		<script>			
+	        var str = $('h6').text();
+	        var arr = str.split("");
+	        $.each(arr, function(index, element){
+	            $('h1').append('<span id="s'+index+'">' + element + '</span>');
+	            window.setInterval(function(){
+	            var randomColor = Math.floor(Math.random()*16777215).toString(16);
+	            $( "#s" +index+ "").css('-webkit-text-stroke-color',  ' #'+ randomColor + ' ' );
+	            }, 100);
+	        })
+	        console.log(navigator.userAgent);
+		</script>
+		<script type='text/javascript'>
+			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+				console.log("fail");
+			} else {
+				var text='Drag Me';
+				//<![CDATA[
+				function moveid(e,t,n){if(ns4)e.moveTo(t,n);else{e.style.left=t+"px";e.style.top=n+"px"}}function animate(e){x1=Xoff+(ie4||ie5?event.clientX+document.body.scrollLeft:e.pageX);y1=Yoff+(ie4||ie5?event.clientY+document.body.scrollTop:e.pageY)}function getidleft(e){if(ns4)return e.left;else return parseInt(e.style.left)}function getidtop(e){if(ns4)return e.top;else return parseInt(e.style.top)}function getwindowwidth(){if(ie4||ie5)return document.body.clientWidth+document.body.scrollLeft;else return window.innerWidth+pageXOffset}function movetxts(){for(i=text.length;i>1;i=i-1){if(getidleft(txtA[i-1])+txtw*2>=getwindowwidth()){moveid(txtA[i-1],0,-1e3);moveid(txtA[i],0,-1e3)}else moveid(txtA[i],getidleft(txtA[i-1])+txtw,getidtop(txtA[i-1]))}moveid(txtA[1],x1,y1)}var delay=40;var Xoff=20;var Yoff=20;var txtw=14;var beghtml='<font color="#ff0004"><b>';var endhtml="</b></font>";ns4=navigator.appName.indexOf("Netscape")>=0&&document.layers?true:false;ie4=document.all&&!document.getElementById?true:false;ie5=document.all&&document.getElementById?true:false;ns6=document.getElementById&&navigator.appName.indexOf("Netscape")>=0?true:false;var txtA=new Array;text=text.split("");var x1=0;var y1=-1e3;var t="";for(i=1;i<=text.length;i++){t+=ns4?'<layer left="0" top="-100" width="'+txtw+'" name="txt'+i+'" height="1">':'<div id="txt'+i+'" style="z-index: 9999; position:absolute;top:-100px;left:0px;height:1px;width:'+txtw+';visibility:visible;">';t+=beghtml+text[i-1]+endhtml;t+=ns4?"</layer>":"</div>"}document.write(t);window.onload=function(){for(i=1;i<=text.length;i++)txtA[i]=ns4?document.layers["txt"+i]:ie4?document.all["txt"+i]:document.getElementById("txt"+i);if(ns4)document.captureEvents(Event.MOUSEMOVE);document.onmousemove=animate;setInterval("movetxts()",delay)}//]]>
+			}
+			
+		</script>
+		
+	</body>
+
+</html>
